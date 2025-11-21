@@ -82,7 +82,7 @@ function App() {
     <Analytics/>
       <div className='flex selection:text-white selection:bg-black flex-col md:flex-row '>
 
-        <div className='h-180 md:h-screen w-auto md:w-100 bg-neutral-100 flex flex-col items-center pt-15 gap-5 mb-10 md:mb-0 '>
+        <div className='h-180 md:h-screen w-auto md:w-100 bg-neutral-100 flex flex-col items-center pt-15 gap-5  order-2 md:order-1 '>
 
           <div className='flex flex-col gap-2'>
             <h1 className='font-semibold text-2xl'>Title</h1>
@@ -130,7 +130,7 @@ function App() {
 
         </div>
 
-        <div className='h-screen w-auto flex-1 flex flex-col justify-center items-center -mt-7 selection:text-white selection:bg-black  mb-20 md:mb-0
+        <div className='h-screen w-auto flex-1 flex flex-col justify-center items-center md:-mt-7 selection:text-white selection:bg-black  pt-10 pb-10 md:pb-0  order-1 md:order-2
         bg-[radial-gradient(circle,_#e5e7eb_1px,_transparent_1px)]
         bg-[size:10px_10px]
         '>
