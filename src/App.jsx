@@ -8,6 +8,7 @@ import { TbUpload } from "react-icons/tb";
 import { RiResetLeftLine } from "react-icons/ri";
 
 import Bgcolor from './components/bgcolor';
+import Filter from './components/filter';
 
 
 
@@ -115,6 +116,12 @@ function App() {
 
           </div>
 
+          <div>
+
+            <Filter/>
+
+          </div>
+
         </div>
 
         <div className='h-screen w-800 flex-1 flex flex-col justify-center items-center -mt-7 selection:text-white selection:bg-black
@@ -149,7 +156,29 @@ function App() {
                 
                 <div className='w-full aspect-square rounded-sm  overflow-hidden '>
                   {image ?
-                    (<img src={image} className='w-full h-full  rounded-xm object-cover   ' />) : null
+                    (<img src={image} className='w-full h-full  rounded-xm object-cover
+                         
+                       retro:filter 
+                       retro:sepia-[100%]
+                        retro:brightness-90 
+                        retro:contrast-125
+                         retro:saturate-170 
+                         retro:hue-rotate-10
+                       
+
+
+                       sunny:filter 
+                       sunny:brightness-110 
+                       sunny:saturate-150 
+                       sunny:contrast-100 
+
+
+                       bw:filter 
+                       bw:brightness-110 
+                       bw:saturate-0 
+                       bw:contrast-110 
+                       
+                      ' />) : null
                   }
                   
 
