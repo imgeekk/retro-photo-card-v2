@@ -22,7 +22,7 @@ function Bgcolor() {
         setColor(newColor);
     };
 
-
+    
   return (
     <div className='flex flex-col'>
         <h1 className='font-semibold text-2xl flex mb-2'>Colors</h1>

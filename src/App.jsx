@@ -24,6 +24,7 @@ function App() {
   const [title, setTitle] = useState('')
   const [date, setdate] = useState()
 
+  const [filter, setFilter] = useState("");
 
   
 
@@ -46,9 +47,14 @@ function App() {
     setImage(null)
     setTitle('')
     setdate()
+    
+  
 
     dateRef.current.value = ''
     titleRef.current.value = ''
+
+
+ 
   }
 
 
@@ -71,8 +77,9 @@ function App() {
 
   return (
     <>
-      <div className='flex selection:text-white selection:bg-black'>
-        <div className='h-screen w-100 bg-neutral-100 flex flex-col items-center pt-20 gap-5'>
+      <div className='flex selection:text-white selection:bg-black flex-col md:flex-row '>
+
+        <div className='h-180 md:h-screen w-auto md:w-100 bg-neutral-100 flex flex-col items-center pt-15 gap-5 mb-10 md:mb-0 '>
 
           <div className='flex flex-col gap-2'>
             <h1 className='font-semibold text-2xl'>Title</h1>
@@ -111,20 +118,16 @@ function App() {
           </div>
 
           <div>
-
             <Bgcolor/>
-
           </div>
 
           <div>
-
-            <Filter/>
-
+            <Filter  onFilterChange={setFilter}/>
           </div>
 
         </div>
 
-        <div className='h-screen w-800 flex-1 flex flex-col justify-center items-center -mt-7 selection:text-white selection:bg-black
+        <div className='h-screen w-auto flex-1 flex flex-col justify-center items-center -mt-7 selection:text-white selection:bg-black  mb-20 md:mb-0
         bg-[radial-gradient(circle,_#e5e7eb_1px,_transparent_1px)]
         bg-[size:10px_10px]
         '>
@@ -132,10 +135,11 @@ function App() {
 
             <div ref={imgBoxRef} className='inline-block'>
 
-              <div className=' w-[320px] h-[400px bg-[#e0f2fe] m-6 mb-10 rounded-lg shadow-lg border-2 border-[#7dd3fc] flex flex-col  hover:rotate-5 transition-all duration-400 px-5 pt-5 pb-4 overflow-hidden 
+              <div className='w-[300px] md:w-[320px] h-[370px] md:h-[400px] bg-[#e0f2fe] m-6 mb-10 rounded-lg shadow-lg border-2 border-[#7dd3fc] flex flex-col  hover:rotate-5 transition-all duration-400 px-5 pt-5 pb-4 overflow-hidden flex-wrap
+
               yellow:bg-yellow-200 yellow:border-yellow-400
               
-              sky:bg-sky-200 sky::border-sky-400
+              sky:bg-sky-100 sky:border-sky-300
               
               green:bg-green-200 green:border-green-500
               
@@ -154,9 +158,9 @@ function App() {
               orange:bg-orange-200 orange:border-orange-400
               '>
                 
-                <div className='w-full aspect-square rounded-sm  overflow-hidden '>
+                <div className=' relative w-full aspect-square rounded-sm  overflow-hidden '>
                   {image ?
-                    (<img src={image} className='w-full h-full  rounded-xm object-cover
+                    (<img src={image} className='w-full h-full  rounded-xm object-cover 
                          
                        retro:filter 
                        retro:sepia-[100%]
@@ -168,23 +172,80 @@ function App() {
 
 
                        sunny:filter 
-                       sunny:brightness-110 
+                       sunny:brightness-100 
                        sunny:saturate-150 
-                       sunny:contrast-100 
+                       sunny:contrast-100
+                       
 
 
                        bw:filter 
                        bw:brightness-110 
                        bw:saturate-0 
                        bw:contrast-110 
-                       
+
+
+                        tealOrange:filter 
+                        tealOrange:brightness-100 
+                        tealOrange:contrast-125 
+                        tealOrange:saturate-125 
+                        tealOrange:hue-rotate-[20deg]
+  
+                        
+                        bright:brightness-[1.12] 
+                        bright:contrast-[1.0]
+                        bright:saturate-[1.45]
+                        bright:sepia-[0.5]
+                        bright:hue-rotate-[15deg] 
+
+
+                        
+                        
+
                       ' />) : null
+                      
+                  }
+
+                    
+                          
+                     { filter === "cinematic" && 
+                    (
+                      <div>
+                       <div className="absolute inset-0 bg-teal-300/30 mix-blend-color"></div>
+                      <div className="absolute inset-0 bg-orange-500/20 mix-blend-soft-light backdrop-brightness-110 backdrop-contrast-125"></div>
+
+                     
+                      </div>
+                    )
                   }
                   
 
+                          
+
+                  { filter === "sunlight" && 
+                    (
+                      <div>
+                        <div className="absolute inset-0 bg-orange-400/40 mix-blend-soft-light"></div>
+                        <div className="absolute inset-0 bg-yellow-200/20 mix-blend-screen"></div>
+                      </div>
+                    )
+                  }
+
+
+
+
+                  { filter === "tealOrange" && 
+                    (
+                      <div>
+                        <div className='bg-green-500 absolute inset-0 mix-blend-soft-light'></div>
+                        <div className='bg-red-400 absolute inset-0 mix-blend-soft-light'></div>
+                      </div>
+                    )
+                  }
+                    
                 </div>
-                <div className='flex  flex-wrap '>
-                  <h1 className='mt-2 font-semibold text-lg break-words '>{title}</h1>
+
+                <div className=' flex  flex-wrap '>
+                  <h1 className='mt-2 font-semibold text-lg s break-all'>{title}</h1>
                 </div>
                 <div className='w-full h-11 flex justify-end items-end'>
                   <p className='mt-2  text-sm text-[#a3a3a3] font-mono '>{date}</p>
@@ -196,7 +257,7 @@ function App() {
             
           <form action="" className='flex  flex-row gap-4 justify-center   items-center mb-4'>
 
-            <input id='file' onChange={ handleUpload} type="file" className='border-2 cursor-pointer rounded-md p-2 hidden'/>
+            <input id='file' onChange={ handleUpload} accept="image/*" type="file" className='border-2 cursor-pointer rounded-md p-2 hidden'/>
 
 
               
