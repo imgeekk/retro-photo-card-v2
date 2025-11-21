@@ -10,6 +10,8 @@ import { RiResetLeftLine } from "react-icons/ri";
 import Bgcolor from './components/bgcolor';
 import Filter from './components/filter';
 
+import { Analytics } from "@vercel/analytics/react"
+
 
 
 function App() {
@@ -77,6 +79,7 @@ function App() {
 
   return (
     <>
+    <Analytics/>
       <div className='flex selection:text-white selection:bg-black flex-col md:flex-row '>
 
         <div className='h-180 md:h-screen w-auto md:w-100 bg-neutral-100 flex flex-col items-center pt-15 gap-5 mb-10 md:mb-0 '>
