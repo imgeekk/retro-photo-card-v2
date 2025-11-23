@@ -4,20 +4,20 @@
 /* fonts */
 @font-face {
     font-family: inter;
-    src: url(fonts/Inter/Inter_18pt-Regular.ttf);
+    src: url(/fonts/Inter/Inter_18pt-Regular.ttf);
 }
 @font-face {
     font-family: intermed;
-    src: url(fonts/Inter/Inter_18pt-Medium.ttf);
+    src: url(/fonts/Inter/Inter_18pt-Medium.ttf);
 }
 @font-face {
     font-family: geistmed;
-    src: url(fonts/Geist_Mono/GeistMono-Medium.ttf);
+    src: url(/fonts/Geist_Mono/GeistMono-Medium.ttf);
 }
 
 @font-face {
     font-family: geist;
-    src: url(fonts/Geist_Mono/GeistMono-Regular.ttf);
+    src: url(/fonts/Geist_Mono/GeistMono-Regular.ttf);
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
