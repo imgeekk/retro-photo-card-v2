@@ -165,7 +165,7 @@ function App() {
         >
           <div ref={imgBoxRef} className="inline-block">
             <div
-              className="w-[300px] md:w-[320px] h-[400px] bg-[#e0f2fe] m-6 mb-10 rounded-lg shadow-md border-2 border-[#7dd3fc] flex flex-col hover:scale-101 hover:shadow-lg transition-all duration-400 px-5 pt-5 pb-4 overflow-hidden flex-wrap relative
+              className="w-[300px] md:w-[320px] h-[415px] bg-[#e0f2fe] m-6 mb-10 rounded-lg shadow-md border-2 border-[#7dd3fc] flex flex-col hover:scale-101 hover:shadow-lg transition-all duration-400 px-5 pt-5 pb-4 overflow-hidden flex-wrap relative
 
 
 
